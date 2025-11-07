@@ -1,199 +1,398 @@
-# Stellar Startup Template
+# Stellar Startup Template - 🦈 App de Ahorro Tiburona
 
-A production-ready monorepo template for building Web3 applications on Stellar with Next.js and Supabase.
+## 📋 Descripción del Proyecto
+Aplicación de ahorro transparente construida sobre blockchain Stellar, que permite a usuarios crear metas de ahorro y realizar aportes mediante transacciones descentralizadas.
 
-## 🏗️ Structure
+---
 
-This monorepo uses [Turborepo](https://turbo.build/repo) and contains:
+## 🎯 Estructura del Taskflow (3 Pantallas Esenciales)
 
+### **Pantalla 1: Home - Lista de Metas** 
+`apps/web/app/page.tsx` - Componente `PantallaHome`
+
+**Funcionalidad:**
+- Visualización de todas las metas de ahorro creadas
+- Tarjetas con barra de progreso visual y montos actuales vs. objetivo
+- Botón flotante para crear nuevas metas
+- Indicador de wallet conectada (address truncada)
+
+**Elementos clave:**
+- Estado inicial cuando no hay metas (empty state)
+- Diseño con gradiente cálido (`from-rose-50 to-amber-100`)
+- Componente `MetaCard` reutilizable
+
+---
+
+### **Pantalla 2: Aporte - Formulario de Transacción**
+`apps/web/app/page.tsx` - Componente `PantallaAporte`
+
+**Funcionalidad:**
+- Formulario dual: crear nueva meta o aportar a meta existente
+- Validación de montos en tiempo real
+- Preview del aporte antes de confirmar
+- Loading state durante procesamiento blockchain
+
+**Elementos clave:**
+- Inputs para: nombre de meta, monto objetivo, monto a aportar
+- Botón deshabilitado durante transacción
+- Mensaje de fee transparente ($0.00001 XLM)
+
+---
+
+### **Pantalla 3: Confirmación - Estado Exitoso**
+`apps/web/app/page.tsx` - Componente `PantallaConfirmacion`
+
+**Funcionalidad:**
+- Confirmación visual de transacción exitosa
+- Hash de transacción completo con botón de copiado
+- Link directo a Stellar Expert (explorer blockchain)
+- Navegación para volver al home o realizar más aportes
+
+**Elementos clave:**
+- Diseño con gradiente de éxito (`from-green-50 to-emerald-100`)
+- Datos de la transacción: meta, monto, fecha, hash
+- URL del explorer: `https://stellar.expert/explorer/testnet/tx/{hash}`
+
+---
+
+## 🔧 Modificaciones Principales al Template Base
+
+### 1. **Contexto de Wallets: Fix del "Flasheo" de Pantalla**
+**Archivo:** `apps/web/contexts/WalletsKitContext.tsx`
+
+**Problema:** 
+La pantalla de bienvenida desaparecía instantáneamente si había una sesión previa en localStorage, causando una mala experiencia de usuario.
+
+**Solución implementada:**
+```typescript
+// Se añadió estado de carga
+const [isLoadingKit, setIsLoadingKit] = useState(true)
+
+// Exportado en el contexto
+export type WalletsKitContextValue = {
+  // ... otras propiedades
+  isLoadingKit: boolean;
+}
+
+// Lógica de auto-conexión mejorada
+useEffect(() => {
+  if (!kit) return;
+  setIsLoadingKit(true);
+  try {
+    const lastWallet = localStorage.getItem("stellar.wallet.selected");
+    if (lastWallet) {
+      // ... lógica de reconexión
+    }
+  } finally {
+    setIsLoadingKit(false);
+  }
+}, [kit, setWallet, refreshAddress]);
 ```
-stellar-startup-template/
-├── apps/
-│   ├── web/          # Next.js frontend with Stellar SDK
-│   └── backend/      # Supabase backend
-├── contracts/        # Stellar Soroban smart contracts
-└── packages/         # Shared packages
-    └── tsconfig/     # Shared TypeScript configurations
+
+**En page.tsx:**
+```typescript
+// Renderizado condicional mejorado
+if (!isConnected && !isLoadingKit) {
+  return <PantallaBienvenida />
+}
 ```
 
-## 🚀 Quick Start
+---
 
-### Prerequisites
+### 2. **API del Contexto: Corrección de Nombres**
+**Archivo:** `apps/web/app/page.tsx`
 
-- Node.js 18+
-- npm or yarn
-- [Stellar CLI](https://developers.stellar.org/docs/tools/developer-tools) (for contract development)
-- [Supabase CLI](https://supabase.com/docs/guides/cli) (for backend development)
-- Docker (for local Supabase)
+**Problema:**
+El código usaba funciones obsoletas o inexistentes del contexto (`useWalletsKit`, `connect`, `connector`).
 
-### Installation
+**Solución:**
+```typescript
+// ❌ Código original (incorrecto)
+import { useWalletsKit } from '@/contexts/WalletsKitContext'
+const { address, isConnected, connector, connect } = useWalletsKit()
+await connector.signTransaction(xdr)
 
-1. Install dependencies:
+// ✅ Código corregido
+import { useWalletsKitContext } from '@/contexts/WalletsKitContext'
+const { address, openModalAndConnect, signTransaction } = useWalletsKitContext()
+const isConnected = !!address
+await signTransaction(xdr)
+```
+
+**Tabla de reemplazos:**
+| Obsoleto | Correcto |
+|----------|----------|
+| `useWalletsKit()` | `useWalletsKitContext()` |
+| `connect` | `openModalAndConnect` |
+| `isConnected` | Derivado: `!!address` |
+| `connector.signTransaction()` | `signTransaction()` |
+
+---
+
+### 3. **Limitación del Memo en Transacciones**
+**Archivo:** `apps/web/app/page.tsx` - Función `handleConfirmarAporte`
+
+**Problema:**
+Error crítico: `"Expects string, array or buffer, max 28 bytes"`. El nombre de la meta excedía el límite estricto de Stellar.
+
+**Solución implementada:**
+```typescript
+// Truncamiento de memo a 28 bytes
+.addMemo(StellarSdk.Memo.text(
+  metaSeleccionada 
+    ? `Aporte: ${metaSeleccionada.nombre}`.substring(0, 28)
+    : `Nueva meta: ${formulario.nombreMeta}`.substring(0, 28)
+))
+```
+
+**Lección aprendida:** Stellar tiene límites estrictos en los memos. Siempre validar longitud antes de construir transacciones.
+
+---
+
+## 🚨 Errores Críticos Resueltos
+
+### **Error 1: Librería de íconos no instalada**
 ```bash
-npm install
+Cannot find module 'lucide-react' or its corresponding type declarations.
 ```
 
-2. Set up the web app environment:
+**Solución:**
 ```bash
-cd apps/web
-cp .env.local.example .env.local
-# Edit .env.local with your configuration
+npm install lucide-react
 ```
 
-3. Initialize and start Supabase (optional):
+---
+
+### **Error 2: Transacción fallida por Memo excedido**
+```
+Stellar SDK Error: Memo text exceeds 28 bytes
+```
+
+**Causa:** Los nombres de metas largas generaban memos superiores a 28 bytes.
+
+**Solución:** Implementación de `.substring(0, 28)` en todos los memos.
+
+---
+
+### **Error 3: Referencia a propiedades inexistentes del contexto**
+```typescript
+Cannot find name 'connector'
+Cannot find name 'connect'
+```
+
+**Causa:** Uso de API obsoleta del contexto de wallets.
+
+**Solución:** Actualización completa a `useWalletsKitContext()` con sus propiedades correctas.
+
+---
+
+## 📦 Dependencias del Proyecto
+
+```json
+{
+  "lucide-react": "^0.263.1",
+  "@stellar/stellar-sdk": "latest",
+  "@creit.tech/stellar-wallets-kit": "latest"
+}
+```
+
+**Instalación:**
 ```bash
-cd apps/backend
-npx supabase init
+npm install lucide-react @stellar/stellar-sdk @creit.tech/stellar-wallets-kit
+```
+
+---
+
+## ⚙️ Configuración del Proyecto
+
+### **Red de Stellar**
+El proyecto usa **Stellar Testnet** por defecto:
+
+```typescript
+// Servidor Horizon
+const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org')
+
+// Network passphrase
+networkPassphrase: StellarSdk.Networks.TESTNET
+```
+
+### **Cuenta de Destino**
+Define tu cuenta destino para recibir aportes:
+
+```typescript
+const CUENTA_AHORRO = 'GABCXCMLQBEI63K2XII3HCMXAFMQZTE26N4NJSKDDPQ33ZOJPV7WLBHK'
+```
+
+---
+
+## 🎨 Mejoras de UX Implementadas
+
+### **Paleta de Colores Cálida**
+Se reemplazó la paleta técnica por colores más amigables alineados con la proto-persona no-técnica:
+
+```typescript
+// ❌ Antes: Paleta fría y técnica
+className="bg-gradient-to-br from-blue-50 to-indigo-100"
+
+// ✅ Después: Paleta cálida y accesible
+className="bg-gradient-to-br from-rose-50 to-amber-100"
+```
+
+**Pantallas afectadas:**
+- Pantalla de bienvenida (no conectado)
+- Pantalla Home (lista de metas)
+
+---
+
+## 🔄 Flujo de Transacción Stellar (5 Pasos)
+
+Implementado en `handleConfirmarAporte`:
+
+```typescript
+// 1. Conectar con Horizon Server
+const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org')
+
+// 2. Cargar cuenta origen (usuario)
+const sourceAccount = await server.loadAccount(address)
+
+// 3. Construir transacción
+const transaction = new StellarSdk.TransactionBuilder(sourceAccount, {
+  fee: StellarSdk.BASE_FEE,
+  networkPassphrase: StellarSdk.Networks.TESTNET,
+})
+  .addOperation(StellarSdk.Operation.payment({
+    destination: CUENTA_AHORRO,
+    asset: StellarSdk.Asset.native(),
+    amount: monto.toString(),
+  }))
+  .addMemo(StellarSdk.Memo.text(`Meta: ${nombre}`.substring(0, 28)))
+  .setTimeout(180)
+  .build()
+
+// 4. Firmar transacción con wallet del usuario
+const signedTxXdr = await signTransaction(transaction.toXDR())
+const signedTransaction = StellarSdk.TransactionBuilder.fromXDR(
+  signedTxXdr, 
+  StellarSdk.Networks.TESTNET
+)
+
+// 5. Enviar a la red
+const result = await server.submitTransaction(signedTransaction)
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### **Error: Listener async response**
+```
+Uncaught (in promise) Error: A listener indicated an asynchronous response...
+```
+**Causa:** Extensiones de wallet (Freighter) comunicándose de forma asíncrona.  
+**Solución:** Ignorar si la wallet se conecta correctamente. Es comportamiento normal.
+
+---
+
+### **Error: Account not found**
+```
+Error: Account not found
+```
+**Solución:** Fondear la cuenta en [Friendbot](https://friendbot.stellar.org)
+```bash
+# Pega tu CUENTA_AHORRO y solicita XLM
+```
+
+---
+
+### **Error: Artifact con imports no soportados**
+```
+@/contexts/WalletsKitContext
+@stellar/stellar-sdk
+```
+**Solución:** Este código es para tu proyecto local, no para Claude.  
+Copiar el código completo en `apps/web/app/dashboard/page.tsx`
+
+---
+
+### **Error de TypeScript con el import**
+
+**Opción 1:** Reiniciar servidor TS
+```
+Ctrl+Shift+P → "TypeScript: Restart TS Server"
+```
+
+**Opción 2:** Limpiar caché
+```bash
+rm -rf .next
+rm -rf node_modules/.cache
 npm run dev
-npm run status  # Get credentials for .env.local
 ```
 
-4. Build Soroban contracts:
-```bash
-cd contracts
-npm run build
+**Opción 3:** Modificar export a default
+En `WalletsKitContext.tsx`:
+```typescript
+export default function useWalletsKitContext() { ... }
 ```
 
-## 📦 Apps & Packages
-
-### Web (`apps/web`)
-
-Next.js 16 application with:
-- TypeScript
-- Tailwind CSS
-- Supabase client
-- Stellar SDK integration
-- ESLint & Prettier
-
-**Commands:**
-```bash
-npm run dev        # Start development server
-npm run build      # Build for production
-npm run start      # Start production server
-npm run lint       # Run ESLint
+En `page.tsx`:
+```typescript
+import useWalletsKitContext from '@/contexts/WalletsKitContext'
 ```
 
-### Backend (`apps/backend`)
+---
 
-Supabase configuration for:
-- PostgreSQL database
-- Authentication
-- Real-time subscriptions
-- Edge Functions
-- Storage
+## ✅ Checklist de Validación Pre-Deploy
 
-**Commands:**
-```bash
-npm run dev        # Start local Supabase
-npm run stop       # Stop local Supabase
-npm run status     # Show connection details
-npm run types      # Generate TypeScript types
+Antes de probar la aplicación:
+
+- [ ] `lucide-react` instalado
+- [ ] Import correcto: `useWalletsKitContext`
+- [ ] No hay referencias a `connector` o `connect`
+- [ ] Servidor dev sin errores de TypeScript
+- [ ] Wallet de prueba con fondos en Testnet
+- [ ] Cuenta destino (`CUENTA_AHORRO`) configurada
+- [ ] Network configurada en TESTNET
+
+---
+
+## 📊 Arquitectura de Estados
+
+### **Estados de Pantalla**
+```typescript
+type Pantalla = 'home' | 'aporte' | 'confirmacion'
 ```
 
-### Contracts (`contracts`)
+### **Modos de Aporte**
+- **Nueva meta:** Requiere `nombreMeta` + `montoObjetivo` + `montoAporte`
+- **Aporte a meta existente:** Solo requiere `montoAporte`
 
-Stellar Soroban smart contracts workspace with a hello-world example.
+### **Estructura de Datos**
+```typescript
+interface Meta {
+  id: number
+  nombre: string
+  montoObjetivo: number
+  montoActual: number
+  transacciones: Transaccion[]
+}
 
-**Commands:**
-```bash
-npm run build      # Build contracts
-npm run test       # Run tests
-npm run optimize   # Optimize WASM
+interface Transaccion {
+  fecha: string
+  monto: number
+  hash: string
+  metaNombre: string
+}
 ```
+---
 
-## 🔧 Development
+## 📝 Notas Importantes
 
-### Root Commands
+- ⚠️ Las transacciones son **reales** en Stellar Testnet
+- 💾 Los datos se guardan solo en memoria (implementar localStorage/backend después)
+- 💰 Comisión por transacción: **$0.00001 XLM**
+- ⏱️ Timeout de transacciones: **180 segundos**
+- 🔗 Explorer: `https://stellar.expert/explorer/testnet/`
 
-```bash
-npm run dev        # Start all apps in development mode
-npm run build      # Build all apps
-npm run lint       # Lint all apps
-npm run format     # Format code with Prettier
-```
+---
 
-### Git Hooks
-
-This template uses Husky for git hooks:
-- **pre-commit**: Runs lint-staged to lint and format staged files
-
-## 🌟 Features
-
-- ⚡ **Turborepo** - High-performance build system for monorepos
-- 🔐 **Supabase** - Open-source Firebase alternative with PostgreSQL
-- 🌐 **Next.js 16** - React framework with App Router
-- 🎨 **Tailwind CSS** - Utility-first CSS framework
-- 🪐 **Stellar Soroban** - Smart contracts for the Stellar network
-- 📝 **TypeScript** - Type safety across the entire stack
-- 🎯 **ESLint & Prettier** - Code quality and formatting
-- 🪝 **Husky & lint-staged** - Git hooks for code quality
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
-- **Backend**: Supabase (PostgreSQL, Auth, Storage)
-- **Smart Contracts**: Stellar Soroban (Rust)
-- **Build System**: Turborepo
-- **Package Manager**: npm
-- **Code Quality**: ESLint, Prettier, Husky
-
-## 📚 Learn More
-
-- [Turborepo Documentation](https://turbo.build/repo/docs)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Supabase Documentation](https://supabase.com/docs)
-- [Stellar Documentation](https://developers.stellar.org/)
-- [Soroban Documentation](https://soroban.stellar.org/docs)
-
-## 🧩 Frontend Contract Bindings (Hello World & Increment)
-
-The web app dynamically loads generated TypeScript bindings for your Soroban contracts.
-
-- See the detailed guide: `apps/web/CONTRACTS_GUIDE.md`.
-- Generate bindings with Stellar CLI and point the app to the generated package(s).
-
-Environment variables (set in `apps/web/.env.local`):
-
-```
-HELLO_WORLD_BINDING=packages/hello_world
-NEXT_PUBLIC_INCREMENT_BINDING=packages/increment
-NEXT_PUBLIC_STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
-```
-
-Notes:
-- The app uses an indirect dynamic import to resolve bindings by module id or path.
-- Errors will clearly explain how to generate bindings if a module can’t be found.
-
-## 🔐 Wallet Connection Persistence
-
-Wallet selection and address are persisted in `localStorage` and auto-restored on reload.
-
-- Connect once via the UI; the app will remember your selected wallet.
-- On reload, the provider re-selects the wallet and refreshes the address.
-- Use “Disconnect” in the UI to clear persistence.
-
-This is implemented in `apps/web/contexts/WalletsKitContext.tsx` and guarded for SSR.
-
-## 🌍 Web App Environment Variables
-
-Set these in `apps/web/.env.local`:
-
-```
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
-NEXT_PUBLIC_STELLAR_NETWORK=testnet
-NEXT_PUBLIC_STELLAR_HORIZON_URL=https://horizon-testnet.stellar.org
-NEXT_PUBLIC_STELLAR_SOROBAN_RPC_URL=https://soroban-testnet.stellar.org
-NEXT_PUBLIC_APP_NAME=Stellar App
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-# Optional wallet provider settings
-NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=
-
-# Contract bindings (see section above)
-HELLO_WORLD_BINDING=packages/hello_world
-NEXT_PUBLIC_INCREMENT_BINDING=packages/increment
-```
-
-## 📄 License
-
-ISC
+**Desarrollado para Codigo Futura - Buen Dia Builder**
