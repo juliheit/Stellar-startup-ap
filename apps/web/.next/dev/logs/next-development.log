@@ -1,0 +1,939 @@
+[00:00:03.951] Server  LOG      ✓ Ready in 3s
+[00:00:14.531] Server  LOG      ○ Compiling / ...
+[00:00:24.528] Server  WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:00:24.603] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:25.863] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.611] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:00:26.611] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:26.611] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:26.729] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_52ceeb33-bd82-4afd-b193-8771ecdca8db__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex item..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:00:42.036] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:42.806] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.349] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:00:43.349] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:43.349] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:43.349] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_ad208def-e7c0-4048-ac81-a644323461b7__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex item..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:00:48.774] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:49.982] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:00:49.982] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.982] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.982] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.982] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.982] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.982] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:00:49.983] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_71c2c163-4882-47c3-825c-4cdf1c436ea0__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex item..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:01:01.457] Browser ASSERT  true unexpected parse state B
+[00:06:31.735] Server  LOG      ✓ Compiled in 196ms
+[00:06:40.181] Server  LOG      ✓ Compiled in 331ms
+[00:07:24.472] Server  LOG      ✓ Compiled in 199ms
+[00:07:27.872] Server  LOG      ✓ Compiled in 93ms
+[00:07:28.147] Browser ERROR   ./apps/web/app/page.tsx:197:5
+Parsing ecmascript source code failed
+  195 |   // Renderizado condicional de pantallas
+  196 |   
+> 197 |     )
+      |     ^
+  198 |   }
+  199 |
+  200 |   if (pantalla === 'aporte') {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/page.tsx [Client Component Browser]
+    ./apps/web/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/page.tsx [Client Component SSR]
+    ./apps/web/app/page.tsx [Server Component]
+[00:08:19.575] Server  LOG      ✓ Compiled in 75ms
+[00:10:15.727] Server  LOG      ✓ Compiled in 55ms
+[00:10:20.464] Server  LOG      ✓ Compiled in 83ms
+[00:14:43.518] Server  LOG      ✓ Compiled in 83ms
+[00:14:53.365] Server  LOG      ✓ Compiled in 95ms
+[00:15:57.151] Server  WARN    'CustomElementRegistry' already has "stellar-wallets-modal" defined. This may have been caused by live reload or hot module replacement in which case it can be safely ignored.
+Make sure to test your application with a production build as repeat registrations will throw in production.
+[00:15:57.153] Server  WARN    'CustomElementRegistry' already has "stellar-wallets-button" defined. This may have been caused by live reload or hot module replacement in which case it can be safely ignored.
+Make sure to test your application with a production build as repeat registrations will throw in production.
+[00:15:57.154] Server  WARN    'CustomElementRegistry' already has "stellar-accounts-selector" defined. This may have been caused by live reload or hot module replacement in which case it can be safely ignored.
+Make sure to test your application with a production build as repeat registrations will throw in production.
+[00:15:57.256] Server  WARN    Multiple versions of Lit loaded. Loading multiple versions is not recommended. See https://lit.dev/msg/multiple-versions for more information.
+[00:15:57.279] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:15:58.219] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:58.878] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:15:58.878] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:15:58.878] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:15:58.878] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_84a34796-7af4-4595-96b5-8b58b2af1dde__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:32:23.236] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:24.150] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:24.648] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:32:24.648] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:24.648] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:24.786] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_32a257fa-563c-4350-9fd7-f90ff4fdb025__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:32:43.397] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:44.294] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:44.613] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:32:44.613] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:44.613] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:44.613] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_5638c5f1-f1bb-4dc7-bb5e-0a023dd8c99b__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:32:57.348] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:57.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:58.375] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:32:58.375] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:58.375] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:32:58.375] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_2d8f25d4-7168-4218-87e2-5559460dae2d__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:33:05.533] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:06.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:06.602] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:33:06.602] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:06.602] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:06.603] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_0d2a5dd6-9be5-47c8-add6-227783cf72d4__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:33:20.138] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:20.787] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:21.159] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:33:21.159] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:21.159] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:21.159] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_226e17e0-f5ba-4280-bc72-c0b7df1d1638__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:33:28.955] Server  WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:29.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:30.083] Browser WARN    Lit is in dev mode. Not recommended for production! See https://lit.dev/msg/dev-mode for more information.
+[00:33:30.083] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:30.083] Browser WARN    ⚠️ Supabase desactivado temporalmente (sin claves en .env)
+[00:33:30.083] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="/apps/web/...">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="min-h-screen"
+-                           __processed_d3b94a89-2133-459b-a392-6b6de1d3d443__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div
+                              className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(600px_300px_at_50..."
+-                             bis_skin_checked="1"
+                            >
+                            ...
+                              <Navbar>
+                                <header className="sticky top...">
+                                  <div
+                                    className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                    ...
+                              ...
+                                <SegmentViewNode type="page" pagePath="/apps/web/...">
+                                  <SegmentTrieNode>
+                                  <ClientPageRoot Component={function Dashboard} serverProvidedParams={{...}}>
+                                    <Dashboard params={Promise} searchParams={Promise}>
+                                      <div
+                                        className="min-h-screen bg-gradient-to-br from-rose-50 to-amber-100 flex items..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="bg-white rounded-2xl shadow-xl p-8 max-w-md text-center"
+-                                         bis_skin_checked="1"
+                                        >
+                  ...
+
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
+[00:46:54.053] Browser ASSERT  true unexpected parse state B
